@@ -1,0 +1,6 @@
+{
+  "name": "SilentResQ - Hardware & Integration",
+  "description": "Interactive Hardware Overview & Engineering Architecture for the SilentResQ Hybrid VTOL Autonomous Search and Rescue Aircraft.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
