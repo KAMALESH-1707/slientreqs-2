@@ -207,7 +207,12 @@ export const HardwareDetail: React.FC<HardwareDetailProps> = ({
               )}
 
               {activeViewMode === '2D' && (
-                <div className="relative w-full h-[460px] lg:h-[520px] bg-[#0A0B0E] rounded-xl flex items-center justify-center p-8 border border-[#202432]">
+                <div
+                  className="relative w-full h-[460px] lg:h-[520px] rounded-2xl flex items-center justify-center p-8 border border-[#222838] shadow-2xl overflow-hidden"
+                  style={{
+                    background: 'radial-gradient(ellipse at 50% 40%, #181d2a 0%, #0e111a 60%, #08090d 100%)'
+                  }}
+                >
                   <ComponentArtwork
                     id={component.id}
                     mode="detail"

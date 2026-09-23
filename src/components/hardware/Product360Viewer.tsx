@@ -66,7 +66,10 @@ export const Product360Viewer: React.FC<Product360ViewerProps> = ({
 
   return (
     <div
-      className="relative w-full h-[460px] lg:h-[520px] bg-[#0A0B0E] rounded-xl overflow-hidden border border-[#202432] flex flex-col justify-between select-none"
+      className="relative w-full h-[460px] lg:h-[520px] rounded-2xl overflow-hidden border border-[#222838] shadow-2xl flex flex-col justify-between select-none"
+      style={{
+        background: 'radial-gradient(ellipse at 50% 40%, #181d2a 0%, #0e111a 60%, #08090d 100%)'
+      }}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
