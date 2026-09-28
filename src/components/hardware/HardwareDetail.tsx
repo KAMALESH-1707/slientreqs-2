@@ -66,7 +66,7 @@ export const HardwareDetail: React.FC<HardwareDetailProps> = ({
           className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#141722] hover:bg-[#FF5A36] text-white text-xs font-mono font-bold transition-all border border-[#262B3A] hover:border-[#FF5A36] cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>← BACK TO 25 COMPONENTS</span>
+          <span>← BACK TO 24 COMPONENTS</span>
         </button>
 
         {/* Component Selector Prev / Next + Close */}

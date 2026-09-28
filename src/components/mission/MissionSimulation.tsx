@@ -308,7 +308,7 @@ export const MissionSimulation: React.FC<MissionSimulationProps> = ({ onGoToHard
             <div className="absolute top-4 left-4 font-mono text-[11px] text-white/90 bg-black/60 backdrop-blur-sm p-3 rounded-lg border border-white/10 space-y-1">
               <div>TARGET COORD: 11.52712° N, 76.13484° E</div>
               <div>SPECTRAL BAND: {sensorView === 'THERMAL' ? '8–14μm LWIR RADIOMETRIC' : sensorView === 'RGB' ? 'VIS 400-700nm' : 'CO-REGISTERED FUSION'}</div>
-              <div>JETSON ORIN NANO INFERENCE: 32 FPS (TensorRT)</div>
+              <div>JETSON NANO INFERENCE: 20 FPS (TensorRT FP16)</div>
             </div>
 
             <div className="absolute bottom-4 right-4 font-mono text-xs text-[#FF6B35] bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-[#FF6B35]/40">

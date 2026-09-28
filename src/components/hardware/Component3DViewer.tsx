@@ -493,7 +493,7 @@ export const Component3DViewer: React.FC<Component3DViewerProps> = ({
 };
 
 // ============================================================================
-// HIGH-FIDELITY 3D COMPONENT GENERATOR (25 DEDICATED REALISTIC MODELS)
+// HIGH-FIDELITY 3D COMPONENT GENERATOR (24 DEDICATED REALISTIC MODELS)
 // ============================================================================
 function buildComponentMesh(
   id: string,
@@ -1330,66 +1330,104 @@ function buildComponentMesh(
   }
 
   // =========================================================================
-  // MODEL 20: NVIDIA JETSON ORIN NANO AI SUPERCOMPUTER
+  // MODEL 19: NVIDIA JETSON NANO DEVELOPER KIT 4GB
   // =========================================================================
   else if (id === 'jetson') {
-    // Multi-Layer Carrier Board PCB
+    // Multi-Layer Carrier Board PCB (FR4 Dark Green)
     const pcb = new THREE.Mesh(new THREE.BoxGeometry(17, 0.8, 14), pcbMat);
     pcb.castShadow = true;
     root.add(pcb);
 
-    // Active Aluminum Heatsink Block
-    const heatsink = new THREE.Mesh(new THREE.BoxGeometry(11, 2.4, 9.5), darkAlloy);
-    heatsink.position.set(0, 1.6, 0);
+    // Jetson Nano Removable SODIMM System-on-Module (SoM) Base Board
+    const somBoard = new THREE.Mesh(new THREE.BoxGeometry(12, 0.6, 10), darkAlloy);
+    somBoard.position.set(0, 0.7, 0);
+    root.add(somBoard);
+
+    // SODIMM 260-Pin Edge Socket & Side Locking Spring Clips
+    const socket = new THREE.Mesh(new THREE.BoxGeometry(12.4, 0.8, 1.2), darkAlloy);
+    socket.position.set(0, 0.8, -4.8);
+    root.add(socket);
+    const clipL = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.2, 1.8), titaniumMat);
+    clipL.position.set(-6.1, 0.9, 0);
+    root.add(clipL);
+    const clipR = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.2, 1.8), titaniumMat);
+    clipR.position.set(6.1, 0.9, 0);
+    root.add(clipR);
+
+    // Classic Jetson Nano Black Anodized Aluminum Extruded Heatsink
+    const heatsink = new THREE.Mesh(new THREE.BoxGeometry(11, 2.2, 9.2), darkAlloy);
+    heatsink.position.set(0, 1.9, 0);
     root.add(heatsink);
 
-    // CNC Cooling Fins
-    for (let z = -4; z <= 4; z += 0.9) {
-      const fin = new THREE.Mesh(new THREE.BoxGeometry(10.6, 1.8, 0.28), titaniumMat);
+    // Iconic Longitudinal Cooling Fins of the Jetson Nano
+    for (let z = -4.0; z <= 4.0; z += 0.8) {
+      const fin = new THREE.Mesh(new THREE.BoxGeometry(10.8, 2.0, 0.26), darkAlloy);
       fin.position.set(0, 3.4, z);
       root.add(fin);
     }
 
-    // Centered PWM Cooling Fan Cowl & Blades
-    const fanRing = new THREE.Mesh(new THREE.TorusGeometry(3.6, 0.35, 12, 32), darkAlloy);
-    fanRing.rotation.x = Math.PI / 2;
-    fanRing.position.set(0, 3.8, 0);
-    root.add(fanRing);
+    // Heatsink Diagonal Mounting Spring Screws
+    addHexScrew(root, -4.6, 3.1, -3.8, 0.4);
+    addHexScrew(root, 4.6, 3.1, -3.8, 0.4);
+    addHexScrew(root, -4.6, 3.1, 3.8, 0.4);
+    addHexScrew(root, 4.6, 3.1, 3.8, 0.4);
 
-    const fanHub = new THREE.Mesh(new THREE.CylinderGeometry(1.6, 1.6, 0.8, 16), anodizedOrange);
-    fanHub.position.set(0, 3.8, 0);
-    root.add(fanHub);
-
-    // 7 Fan Blades
-    for (let i = 0; i < 7; i++) {
-      const angle = (i * Math.PI * 2) / 7;
-      const blade = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.15, 0.8), darkAlloy);
-      blade.position.set(Math.cos(angle) * 2.2, 3.8, Math.sin(angle) * 2.2);
-      blade.rotation.y = -angle;
-      root.add(blade);
-    }
-
-    // Dual MIPI CSI-2 Camera Ribbon Connectors
-    const camSlot1 = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.8, 0.9), titaniumMat);
-    camSlot1.position.set(-4.2, 0.8, -5.6);
+    // Dual 15-Pin MIPI CSI-2 Camera Ribbon Sockets (CAM0 & CAM1)
+    const camSlot1 = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.7, 0.8), darkAlloy);
+    camSlot1.position.set(-3.8, 0.75, -5.8);
     root.add(camSlot1);
-    const camSlot2 = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.8, 0.9), titaniumMat);
-    camSlot2.position.set(2.2, 0.8, -5.6);
+    const camSlot2 = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.7, 0.8), darkAlloy);
+    camSlot2.position.set(2.8, 0.75, -5.8);
     root.add(camSlot2);
 
-    // 4x USB 3.2 Stack + Gigabit Ethernet Port
-    const usbBlock = new THREE.Mesh(new THREE.BoxGeometry(2.8, 3.2, 4.4), titaniumMat);
-    usbBlock.position.set(-7.5, 2.0, 1.2);
+    // 4x USB 3.0 Stack (Shielded Steel Casing)
+    const usbBlock = new THREE.Mesh(new THREE.BoxGeometry(2.8, 3.2, 4.2), titaniumMat);
+    usbBlock.position.set(-7.5, 2.0, 1.4);
     root.add(usbBlock);
 
+    // Shielded RJ45 Gigabit Ethernet Jack
     const ethPort = new THREE.Mesh(new THREE.BoxGeometry(3.2, 3.0, 3.6), darkAlloy);
-    ethPort.position.set(-7.5, 1.9, -3.6);
+    ethPort.position.set(-7.5, 1.9, -3.4);
     root.add(ethPort);
+    // Ethernet Activity Status LEDs
+    const ethLed = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.4, 0.4), ledGreen);
+    ethLed.position.set(-8.8, 3.0, -3.4);
+    root.add(ethLed);
 
-    // 40-Pin GPIO Expansion Header with Gold Pins
-    const gpio = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.8, 9.8), goldMat);
-    gpio.position.set(7.4, 1.3, 0);
-    root.add(gpio);
+    // HDMI 2.0 + DisplayPort Video Output Connectors
+    const hdmiPort = new THREE.Mesh(new THREE.BoxGeometry(2.4, 1.5, 2.8), titaniumMat);
+    hdmiPort.position.set(-7.5, 1.2, 4.6);
+    root.add(hdmiPort);
+
+    // 5.5mm DC Barrel Power Jack (5V 4A High-Power Mode)
+    const dcJack = new THREE.Mesh(new THREE.CylinderGeometry(1.4, 1.4, 3.2, 16), darkAlloy);
+    dcJack.rotation.z = Math.PI / 2;
+    dcJack.position.set(-7.4, 1.8, -6.0);
+    root.add(dcJack);
+
+    // Micro-USB 5V Power / Flashing Port
+    const microUsb = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.7, 1.4), titaniumMat);
+    microUsb.position.set(-7.6, 0.8, -4.9);
+    root.add(microUsb);
+
+    // 40-Pin GPIO Expansion Header with Gold Contact Pins
+    const gpioBase = new THREE.Mesh(new THREE.BoxGeometry(1.6, 1.2, 10.4), darkAlloy);
+    gpioBase.position.set(7.3, 1.0, 0);
+    root.add(gpioBase);
+    const gpioPins = new THREE.Mesh(new THREE.BoxGeometry(1.0, 1.6, 9.8), goldMat);
+    gpioPins.position.set(7.3, 1.8, 0);
+    root.add(gpioPins);
+
+    // Power Indicator LED (Solid Green)
+    const pwrLed = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.4, 8), ledGreen);
+    pwrLed.position.set(5.5, 0.8, -5.5);
+    root.add(pwrLed);
+
+    // Corner Mounting Standoffs
+    addHexScrew(root, -7.5, 0.6, -6.0, 0.35);
+    addHexScrew(root, 7.5, 0.6, -6.0, 0.35);
+    addHexScrew(root, -7.5, 0.6, 6.0, 0.35);
+    addHexScrew(root, 7.5, 0.6, 6.0, 0.35);
   }
 
   // =========================================================================
@@ -1496,7 +1534,7 @@ function buildComponentMesh(
   }
 
   // =========================================================================
-  // MODEL 25: TACTICAL SEARCH & RESCUE GROUND STATION GATEWAY
+  // MODEL 24: TACTICAL SEARCH & RESCUE GROUND STATION GATEWAY
   // =========================================================================
   else if (id === 'ground-lora-gateway') {
     // Heavy IP67 Pelican-Style Field Case

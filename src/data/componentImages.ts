@@ -18,7 +18,7 @@ import pdbBoard from '../assets/images/pdb_board_1790154719322.jpg';
 import battery6s from '../assets/images/battery_6s_1790154607023.jpg';
 import dcBecRegulator from '../assets/images/dc_bec_regulator_1790154732208.jpg';
 import wiringSafety from '../assets/images/wiring_safety_1790154749904.jpg';
-import jetsonOrinNano from '../assets/images/jetson_orin_nano_1790154466553.jpg';
+import jetsonNano from '../assets/images/jetson_nano_dev_kit_1790577245035.jpg';
 import rgbCamera from '../assets/images/rgb_camera_1790154515385.jpg';
 import thermalCamera from '../assets/images/thermal_camera_1790154486215.jpg';
 import onboardStorage from '../assets/images/onboard_storage_1790154664760.jpg';
@@ -47,7 +47,7 @@ export const COMPONENT_IMAGES: Record<string, string> = {
   'battery-6s': battery6s,
   'dc-dc-bec': dcBecRegulator,
   'wiring-safety': wiringSafety,
-  'jetson': jetsonOrinNano,
+  'jetson': jetsonNano,
   'rgb-camera': rgbCamera,
   'thermal-camera': thermalCamera,
   'onboard-storage': onboardStorage,

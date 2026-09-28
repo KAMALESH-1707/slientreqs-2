@@ -70,7 +70,7 @@ export default function App() {
         onBackToOverview={handleBackToOverview}
       />
 
-      {/* Main Single Page: 25 in one page, or Big 3D Detail Page when INFO clicked */}
+      {/* Main Single Page: 24 in one page, or Big 3D Detail Page when INFO clicked */}
       <main className="flex-1 w-full">
         {selectedComponent ? (
           <HardwareDetail

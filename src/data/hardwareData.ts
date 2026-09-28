@@ -2,46 +2,9 @@ import { HardwareComponent, HardwareCategory } from '../types/hardware';
 
 export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
-    id: 'hybrid-airframe',
-    slug: 'hybrid-airframe',
-    number: 1,
-    name: 'Hybrid VTOL Fixed-Wing Airframe',
-    category: 'AIRFRAME',
-    quantity: 1,
-    role: 'Wings, fuselage and motor mounts',
-    approxPrice: 'EST. ₹48,000 – ₹65,000',
-    pricePerUnitText: 'estimated complete composite airframe kit',
-    priceType: 'EST. PRICE',
-    status: 'REPRESENTATIVE COMPONENT',
-    manufacturerTarget: 'Composite EPO / 3K Carbon Dual-Boom Quadplane Platform (2100mm Wingspan)',
-    aircraftLocation: 'Wings & Booms',
-    summary: '2.1-meter wingspan composite hybrid quadplane airframe integrating fixed aerodynamic wings with dual rigid carbon booms for four VTOL lift motors and central fuselage.',
-    whatIsIt: 'A specialized hybrid quadplane airframe incorporating a 2,100mm wingspan fixed-wing glider profile with reinforced parallel carbon-fiber motor booms for four vertical thrust motors and a rear pusher cruise motor firewall.',
-    whyUsed: 'Conventional multirotors expend massive energy maintaining hover, limiting search radius to under 5 km and 25 minutes. The SilentResQ hybrid airframe takes off vertically without runways, transitions into forward winged flight for 60+ minutes of high-efficiency cruising over landslide disaster zones, and hovers precisely over suspected survivor locations.',
-    howIntegrated: 'Fuselage houses the dual-partitioned avionics bay (Flight Controller isolated from RF transceivers), forward-mounted downward gimbal sensor bay (RGB + Thermal), and central CG battery sled. High-modulus carbon tubes transfer vertical lifting forces directly into the wing spar during transition.',
-    keyDesignConcept: 'Dual-Flight Physics: Aerodynamic lift from fixed wings replaces motor thrust during forward flight, slashing power consumption by up to 68% compared to standard quadcopters.',
-    specifications: [
-      { label: 'Airframe Architecture', value: 'Fixed-Wing Hybrid VTOL / Quadplane', highlight: true },
-      { label: 'Wingspan', value: '2,100 mm (2.1 m)' },
-      { label: 'Fuselage Length', value: '1,250 mm' },
-      { label: 'Primary Materials', value: 'High-Density Molded EPO Foam + 3K Carbon Booms' },
-      { label: 'Empty Airframe Mass', value: '1,850 g' },
-      { label: 'Max Takeoff Weight (MTOW)', value: '6,200 g (6.2 kg)', highlight: true },
-      { label: 'Cruising Airspeed', value: '16 – 22 m/s (58 – 79 km/h)' },
-      { label: 'Stall Speed', value: '11 m/s (39.6 km/h)' },
-      { label: 'Status', value: 'Representative Aerospace Component', highlight: true }
-    ],
-    integrationFlow: {
-      nodes: ['AERODYNAMIC SPAR', 'CARBON BOOMS', 'PAYLOAD BAY', 'LIFT MOTORS', 'CRUISE THRUST', 'DUAL FLIGHT MODES'],
-      description: 'The rigid carbon structural framework routes high-current ESC harnesses internally and anchors both VTOL lift booms and cruise propulsion while shielding the vibration-isolated avionics bay.',
-      flowType: 'propulsion'
-    },
-    sihApproachReference: 'SIH Technical Approach: Hybrid VTOL platform architecture enabling zero-runway emergency deployment in obstructed hilly landslide terrain.'
-  },
-  {
     id: 'vtol-motor',
     slug: 'vtol-motor',
-    number: 2,
+    number: 1,
     name: 'VTOL Lift Motors',
     category: 'PROPULSION',
     quantity: 4,
@@ -77,7 +40,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'vtol-esc',
     slug: 'vtol-esc',
-    number: 3,
+    number: 2,
     name: 'VTOL ESCs',
     category: 'PROPULSION',
     quantity: 4,
@@ -112,7 +75,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'vtol-propeller',
     slug: 'vtol-propeller',
-    number: 4,
+    number: 3,
     name: 'VTOL Propellers',
     category: 'PROPULSION',
     quantity: 4,
@@ -146,7 +109,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'cruise-motor',
     slug: 'cruise-motor',
-    number: 5,
+    number: 4,
     name: 'Cruise Motor',
     category: 'PROPULSION',
     quantity: 1,
@@ -182,7 +145,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'cruise-esc',
     slug: 'cruise-esc',
-    number: 6,
+    number: 5,
     name: 'Cruise ESC',
     category: 'PROPULSION',
     quantity: 1,
@@ -216,7 +179,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'cruise-propeller',
     slug: 'cruise-propeller',
-    number: 7,
+    number: 6,
     name: 'Cruise Propeller',
     category: 'PROPULSION',
     quantity: 1,
@@ -250,7 +213,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'flight-controller',
     slug: 'flight-controller',
-    number: 8,
+    number: 7,
     name: 'Flight Controller / Autopilot',
     category: 'FLIGHT CONTROL',
     quantity: 1,
@@ -264,7 +227,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
     summary: 'High-reliability real-time flight computer running ArduPilot QuadPlane / PX4 firmware for autonomous mission execution.',
     whatIsIt: 'An industrial open-standard flight control computer with three internal IMUs (accelerometers + gyroscopes) suspended on silicone vibration dampers, dual barometers, and high-speed STM32H7 processing cores.',
     whyUsed: 'Handles the split-second mathematical transitions between quadcopter vertical physics and fixed-wing aerodynamic lift. It executes autonomous survey grid waypoints, failsafe Return-To-Launch (RTL), and geo-fence safety routines independently of the AI computer.',
-    howIntegrated: 'GPS + IMU + COMPASS + BAROMETER + AIRSPEED → FLIGHT CONTROLLER → VTOL / FIXED-WING CONTROL. Communicates with Jetson Orin Nano over MAVLink serial bus.',
+    howIntegrated: 'GPS + IMU + COMPASS + BAROMETER + AIRSPEED → FLIGHT CONTROLLER → VTOL / FIXED-WING CONTROL. Communicates with Jetson Nano over MAVLink serial bus.',
     keyDesignConcept: 'Separation of Safety & AI: The flight controller guarantees aerodynamic stability and flight survival even if AI vision processing encounters sudden load spikes.',
     specifications: [
       { label: 'Primary Processor', value: 'STM32H753 480MHz 32-bit Arm Cortex-M7', highlight: true },
@@ -285,7 +248,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'gps-compass',
     slug: 'gps-compass',
-    number: 9,
+    number: 8,
     name: 'GPS/GNSS + Compass',
     category: 'NAVIGATION',
     quantity: 1,
@@ -299,7 +262,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
     summary: 'Aerodynamic elevated puck housing concurrent GPS, GLONASS, Galileo, BeiDou receivers and low-noise magnetic compass.',
     whatIsIt: 'A dual-system navigation module providing sub-meter satellite positioning fixes and magnetic field orientation, elevated on a carbon mast away from motor magnetic fields.',
     whyUsed: 'SilentResQ requires precise coordinates to: 1) Navigate autonomous search corridors along landslide ravines; 2) Geo-tag survivor thermal detections with exact latitude/longitude for rescue ground teams.',
-    howIntegrated: 'Connects directly to the flight controller via I2C/DroneCAN. Navigational position is streamed to Jetson Orin Nano via MAVLink for survivor bounding-box geo-referencing.',
+    howIntegrated: 'Connects directly to the flight controller via I2C/DroneCAN. Navigational position is streamed to Jetson Nano via MAVLink for survivor bounding-box geo-referencing.',
     keyDesignConcept: 'Elevated RF Isolation: Placing the magnetometer on a high mast prevents electromagnetic interference from high-current 6S motor cables from corrupting heading data.',
     specifications: [
       { label: 'GNSS Constellations', value: 'GPS, GLONASS, Galileo, BeiDou concurrent', highlight: true },
@@ -320,7 +283,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'airspeed-pitot',
     slug: 'airspeed-pitot',
-    number: 10,
+    number: 9,
     name: 'Airspeed Sensor + Pitot Tube',
     category: 'NAVIGATION',
     quantity: 1,
@@ -355,7 +318,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'barometer',
     slug: 'barometer',
-    number: 11,
+    number: 10,
     name: 'Barometer',
     category: 'NAVIGATION',
     quantity: 1,
@@ -389,7 +352,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'servos',
     slug: 'servos',
-    number: 12,
+    number: 11,
     name: 'Control-Surface Servos',
     category: 'CONTROL & SAFETY',
     quantity: '3–4',
@@ -423,7 +386,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'rc-receiver',
     slug: 'rc-receiver',
-    number: 13,
+    number: 12,
     name: 'RC Receiver',
     category: 'CONTROL & SAFETY',
     quantity: 1,
@@ -458,7 +421,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'telemetry-radio',
     slug: 'telemetry-radio',
-    number: 14,
+    number: 13,
     name: 'Telemetry Radio',
     category: 'COMMUNICATION',
     quantity: 1,
@@ -492,7 +455,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'power-module',
     slug: 'power-module',
-    number: 15,
+    number: 14,
     name: 'Power Module / Current Sensor',
     category: 'POWER',
     quantity: 1,
@@ -526,7 +489,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'power-distribution',
     slug: 'power-distribution',
-    number: 16,
+    number: 15,
     name: 'Power Distribution System',
     category: 'POWER',
     quantity: 1,
@@ -560,7 +523,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'battery-6s',
     slug: 'battery-6s',
-    number: 17,
+    number: 16,
     name: '6S 14–16 Ah Battery',
     category: 'POWER',
     quantity: 1,
@@ -573,7 +536,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
     aircraftLocation: 'Central Fuselage',
     summary: 'High-capacity 6-cell lithium pack delivering 355 Wh of energy at optimal gravimetric density for 60+ minute flight missions.',
     whatIsIt: 'A 6-cell series lithium energy storage battery engineered for high energy density (Wh/kg) and steady discharge rates necessary to sustain both vertical climb bursts and continuous cruise.',
-    whyUsed: 'Provides the massive energy pool required to lift the 6.2 kg MTOW aircraft vertically, cruise across landslide ravines, power the 20W Jetson Orin Nano AI, and retain safe reserves for hover inspection.',
+    whyUsed: 'Provides the massive energy pool required to lift the 6.2 kg MTOW aircraft vertically, cruise across landslide ravines, power the 10W Jetson Nano AI computer, and retain safe reserves for hover inspection.',
     howIntegrated: 'Installed on a quick-release slide-locking tray at the aircraft center of gravity (CG); connects to PDB via anti-spark XT90-S connectors.',
     keyDesignConcept: 'Center-of-Gravity (CG) Neutrality: Centrally positioned so that as battery technology changes or packs are swapped, aircraft aerodynamic trim remains unchanged.',
     specifications: [
@@ -587,7 +550,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
     ],
     integrationFlow: {
       nodes: ['6S 16,000mAh PACK', 'XT90-S PLUG', 'POWER MODULE', 'PDB BUSBAR', 'PROPULSION & AVIONICS'],
-      description: 'Delivers 22.2V DC energy to both propulsion inverters and precision DC-DC regulators powering the Jetson AI computer.',
+      description: 'Delivers 22.2V DC energy to both propulsion inverters and precision DC-DC regulators powering the Jetson Nano AI computer.',
       flowType: 'power_avionics'
     },
     sihApproachReference: 'SIH Technical Approach: 6S high-capacity battery pack serving as the single unified energy reservoir for the entire platform.'
@@ -595,7 +558,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'dc-dc-bec',
     slug: 'dc-dc-bec',
-    number: 18,
+    number: 17,
     name: 'DC-DC / BEC Regulators',
     category: 'POWER',
     quantity: 'As required',
@@ -604,15 +567,15 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
     pricePerUnitText: 'estimated each (EST. ₹3,200 – ₹5,600 dual set)',
     priceType: 'EST. PRICE',
     status: 'REPRESENTATIVE COMPONENT',
-    manufacturerTarget: 'Synchronous Switching Step-Down Regulators with LC Ripple Filter (12V 5A & 5.3V 10A)',
+    manufacturerTarget: 'Synchronous Switching Step-Down Regulators with LC Ripple Filter (5V 4A & 5.3V 10A)',
     aircraftLocation: 'Avionics Bay',
-    summary: 'High-efficiency switching regulators delivering ripple-free DC power to the Jetson Orin Nano, flight controller, and servo actuators.',
-    whatIsIt: 'Electronic step-down buck converters featuring heavy inductors and LC noise filters to drop the 22.2V–25.2V battery voltage to stable 12V DC (for Jetson & cameras) and 5.3V / 7.4V (for avionics & servos).',
-    whyUsed: 'Motor commutation induces high-frequency voltage spikes and ground noise. Dedicated BECs prevent these electrical ripples from resetting the Jetson AI processor or corrupting sensitive sensor readings.',
-    howIntegrated: 'Tapped off the PDB primary 6S bus; outputs routed via shielded twisted pairs to the Jetson DC barrel jack and Pixhawk power input.',
+    summary: 'High-efficiency switching regulators delivering ripple-free DC power to the Jetson Nano, flight controller, and servo actuators.',
+    whatIsIt: 'Electronic step-down buck converters featuring heavy inductors and LC noise filters to drop the 22.2V–25.2V battery voltage to stable 5V DC (for Jetson Nano & cameras) and 5.3V / 7.4V (for avionics & servos).',
+    whyUsed: 'Motor commutation induces high-frequency voltage spikes and ground noise. Dedicated BECs prevent these electrical ripples from resetting the Jetson Nano AI processor or corrupting sensitive sensor readings.',
+    howIntegrated: 'Tapped off the PDB primary 6S bus; outputs routed via shielded twisted pairs to the Jetson Nano DC power barrel jack and Pixhawk power input.',
     keyDesignConcept: 'Galvanic & RF Noise Shielding: Enclosed in aluminum CNC heatsink cases to prevent switching frequency harmonics from radiating into the GPS antenna.',
     specifications: [
-      { label: 'Output 1 (Jetson AI & Cameras)', value: '12.0 V @ 5 A continuous (60W)', highlight: true },
+      { label: 'Output 1 (Jetson Nano AI & Cameras)', value: '5.0 V @ 4 A continuous (20W DC Barrel Jack)', highlight: true },
       { label: 'Quantity', value: 'As required (2–3 modules)' },
       { label: 'Output 2 (Avionics & Servos)', value: '5.3 V @ 10 A continuous' },
       { label: 'Conversion Efficiency', value: '> 92% synchronous rectification' },
@@ -620,8 +583,8 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
       { label: 'Status', value: 'Representative Hardware Specification' }
     ],
     integrationFlow: {
-      nodes: ['22.2V RAW BATTERY', '12V BEC BUCK CONVERTER', 'LOW-PASS LC FILTER', 'JETSON ORIN NANO 12V DC', 'THERMAL / RGB CAMERAS'],
-      description: 'Stabilizes voltage across varying battery discharge states, ensuring the Jetson AI inference engine never suffers voltage dropouts.',
+      nodes: ['22.2V RAW BATTERY', '5V/12V BEC BUCK CONVERTER', 'LOW-PASS LC FILTER', 'JETSON NANO 5V/4A DC', 'THERMAL / RGB CAMERAS'],
+      description: 'Stabilizes voltage across varying battery discharge states, ensuring the Jetson Nano AI inference engine never suffers voltage dropouts.',
       flowType: 'power_avionics'
     },
     sihApproachReference: 'SIH Technical Approach: Clean regulated power supply rails safeguarding sensitive sensor front-ends.'
@@ -629,7 +592,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'wiring-safety',
     slug: 'wiring-safety',
-    number: 19,
+    number: 18,
     name: 'Wiring, Connectors & Safety Hardware',
     category: 'CONTROL & SAFETY',
     quantity: 'System set',
@@ -663,43 +626,43 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'jetson',
     slug: 'jetson',
-    number: 20,
-    name: 'NVIDIA Jetson Orin Nano Super 8GB',
+    number: 19,
+    name: 'NVIDIA Jetson Nano',
     category: 'AI / COMPUTING',
     quantity: 1,
-    role: 'Onboard AI inference, RGB + thermal processing and high-level mission intelligence',
-    approxPrice: 'EST. ₹24,500 – ₹29,800',
+    role: 'Onboard edge AI inference, RGB + thermal processing and survivor detection',
+    approxPrice: 'EST. ₹11,500 – ₹14,800',
     pricePerUnitText: 'estimated developer kit unit',
     priceType: 'EST. PRICE',
     status: 'REPRESENTATIVE COMPONENT',
-    manufacturerTarget: 'NVIDIA Jetson Orin Nano Super (8GB 128-bit LPDDR5, 40 TOPS AI Compute)',
+    manufacturerTarget: 'NVIDIA Jetson Nano Developer Kit B01 (4GB 64-bit LPDDR4, 128 Maxwell CUDA Cores)',
     aircraftLocation: 'Avionics Bay',
-    summary: 'Next-generation embedded edge AI computer running TensorRT-accelerated dual-backbone neural networks for real-time human detection in complex disaster debris.',
-    whatIsIt: 'An industrial edge AI computer featuring an NVIDIA Ampere architecture GPU with 1,024 CUDA cores, 32 Tensor Cores, and a 6-core ARM Cortex-A78AE CPU, consuming only 7W–20W.',
-    whyUsed: 'Provides the massive onboard neural computing required to process high-resolution RGB video and LWIR thermal frames simultaneously. Unlike the older Jetson Nano (472 GFLOPS), the Orin Nano Super delivers up to 40 TOPS (nearly 80× higher AI throughput), enabling real-time YOLOv8/v10 inference at 30+ FPS directly on the aircraft without cloud connectivity.',
-    howIntegrated: 'RGB CAMERA + LWIR THERMAL CAMERA → JETSON ORIN NANO SUPER → AI DETECTION → SURVIVOR CONFIDENCE → GPS → LoRa → RESCUE ALERT. Communicates with Pixhawk over high-speed MAVLink UART for geo-referencing.',
-    keyDesignConcept: 'Separation of AI from Flight Stabilization: The Jetson acts as the "mission brain", dedicated strictly to computer vision, sensor fusion, and alert generation. It never handles low-level motor loops, ensuring flight safety is never compromised by AI processing spikes.',
+    summary: 'Compact edge AI computer featuring a 128-core NVIDIA Maxwell GPU running TensorRT-optimized neural models for real-time survivor detection from thermal and optical streams.',
+    whatIsIt: 'An industrial embedded AI system powered by a 128-core NVIDIA Maxwell architecture GPU and a quad-core 64-bit ARM Cortex-A57 CPU, delivering 472 GFLOPS of accelerated computing within an ultra-efficient 5W to 10W thermal envelope.',
+    whyUsed: 'Provides dedicated onboard neural computing to process RGB video and LWIR radiometric thermal frames simultaneously without requiring internet or cloud connectivity. Using NVIDIA TensorRT FP16 quantization, the Jetson Nano executes real-time person detection models locally over zero-connectivity disaster zones.',
+    howIntegrated: 'Receives dual camera inputs via MIPI CSI-2 and USB. Runs TensorRT multi-spectral detection, pairs detected survivor bounding boxes with GPS coordinates from Pixhawk via MAVLink UART, and triggers LoRa emergency beacon transmission.',
+    keyDesignConcept: 'Separation of AI from Flight Stabilization: The Jetson Nano operates as the mission vision payload computer. Flight stabilization is strictly maintained by Pixhawk, preventing any AI computing spikes from endangering aircraft aerodynamic control.',
     specifications: [
-      { label: 'AI Compute Performance', value: '40 TOPS (INT8) / Ampere Architecture', highlight: true },
+      { label: 'AI Compute Performance', value: '472 GFLOPS (FP16) / Maxwell Architecture', highlight: true },
       { label: 'Quantity', value: '1 unit' },
-      { label: 'GPU Architecture', value: '1,024 NVIDIA CUDA cores with 32 Tensor Cores' },
-      { label: 'CPU Processor', value: '6-core Arm Cortex-A78AE v8.2 64-bit CPU' },
-      { label: 'Unified Memory', value: '8GB 128-bit LPDDR5 @ 68 GB/s bandwidth', highlight: true },
-      { label: 'Power Consumption', value: '7W to 20W configurable modes' },
-      { label: 'Camera Interfaces', value: '2x MIPI CSI-2 (22-pin) + USB 3.2 Gen 2' },
-      { label: 'Status', value: 'Target AI Edge Compute Engine', highlight: true }
+      { label: 'GPU Architecture', value: '128-core NVIDIA Maxwell™ GPU @ 921 MHz' },
+      { label: 'CPU Processor', value: 'Quad-core ARM® Cortex®-A57 MPCore processor @ 1.43 GHz' },
+      { label: 'Unified Memory', value: '4GB 64-bit LPDDR4 @ 25.6 GB/s bandwidth', highlight: true },
+      { label: 'Power Consumption', value: '5W / 10W configurable power modes', highlight: true },
+      { label: 'Camera Interfaces', value: '2x MIPI CSI-2 DPHY lanes (15-pin ribbon connectors)' },
+      { label: 'Status', value: 'Onboard Edge AI Compute Engine', highlight: true }
     ],
     integrationFlow: {
-      nodes: ['RGB 4K SENSOR', 'LWIR THERMAL SENSOR', 'JETSON ORIN NANO SUPER', 'TENSORRT AI INFERENCE', 'SURVIVOR CONFIDENCE > 85%', 'GPS GEO-TAGGER', 'LORA TRANSMITTER'],
-      description: 'Executes synchronized frame alignment, runs dual-modality bounding-box detection, cross-references GPS timestamp, and packages lightweight LoRa alert packets.',
+      nodes: ['RGB CAMERA', 'LWIR THERMAL SENSOR', 'NVIDIA JETSON NANO', 'TENSORRT FP16 INFERENCE', 'SURVIVOR DETECTION > 80%', 'GPS GEO-TAGGER', 'LORA TRANSMITTER'],
+      description: 'Synchronizes dual-camera feeds, runs TensorRT edge inference, matches detection bounding boxes with GPS coordinates from Pixhawk, and triggers immediate LoRa emergency alert dispatch.',
       flowType: 'ai_sensing'
     },
-    sihApproachReference: 'SIH Technical Approach: Edge AI compute engine running multi-spectral sensor fusion for automated survivor detection.'
+    sihApproachReference: 'SIH Technical Approach: Low-power edge AI computing using NVIDIA Jetson Nano for offline multi-spectral survivor detection in zero-connectivity disaster zones.'
   },
   {
     id: 'rgb-camera',
     slug: 'rgb-camera',
-    number: 21,
+    number: 20,
     name: 'RGB Camera',
     category: 'SENSORS',
     quantity: 1,
@@ -713,13 +676,13 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
     summary: 'High-sensitivity optical sensor mounted on vibration-isolated gimbal for daylight visual inspection of landslide zones.',
     whatIsIt: 'A 12-megapixel backside-illuminated CMOS digital camera module equipped with an anti-vibration M12 low-distortion lens and hardware global/rolling shutter optimized for fast aerial capture.',
     whyUsed: 'Captures vivid visual textures of collapsed structures, clothing colors, ground crevices, and landmarks that help search teams identify survivor locations during daylight hours.',
-    howIntegrated: 'Connects directly to the Jetson Orin Nano via high-speed MIPI CSI-2 2-lane ribbon cable for zero-latency direct memory access (DMA) frame grabbing.',
+    howIntegrated: 'Connects directly to the Jetson Nano via high-speed MIPI CSI-2 15-pin ribbon cable for zero-latency direct memory access (DMA) frame grabbing.',
     keyDesignConcept: 'Optical & Thermal Co-Registration: Mechanically bore-sighted alongside the thermal camera so every pixel coordinate in RGB maps directly to its corresponding thermal heat vector.',
     specifications: [
       { label: 'Image Sensor', value: 'Sony Starvis Back-Illuminated CMOS (12.3 Megapixels)', highlight: true },
       { label: 'Quantity', value: '1 unit' },
       { label: 'Resolution', value: '4056 × 3040 / 4K Video @ 30 FPS' },
-      { label: 'Interface', value: 'MIPI CSI-2 22-pin ribbon cable' },
+      { label: 'Interface', value: 'MIPI CSI-2 ribbon cable' },
       { label: 'Field of View (HFOV)', value: '75° – 85° low-distortion lens' },
       { label: 'Unit Weight', value: '32 g (with lens & bracket)' },
       { label: 'Status', value: 'Representative Hardware Specification' }
@@ -734,7 +697,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'thermal-camera',
     slug: 'thermal-camera',
-    number: 22,
+    number: 21,
     name: '256×192 LWIR Thermal Camera',
     category: 'SENSORS',
     quantity: 1,
@@ -748,7 +711,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
     summary: 'Radiometric long-wave infrared sensor detecting temperature differentials as fine as 0.04°C (<40mK NETD) to pinpoint human body warmth.',
     whatIsIt: 'A specialized radiometric thermal sensor containing a micro-machined array of Vanadium Oxide (VOx) microbolometers that measure infrared radiation emitted in the 8μm to 14μm spectrum, outputting calibrated temperature values per pixel.',
     whyUsed: 'Landslide disasters frequently plunge victims into darkness, mud-soaked cavities, and dust clouds where standard cameras see nothing. Thermal sensing identifies human body heat (36.5°C–37.5°C) contrasting against colder earth (10°C–18°C), enabling night missions and obscured detections.',
-    howIntegrated: 'LWIR → JETSON → THERMAL ANALYSIS → RGB + THERMAL FUSION → SURVIVOR DETECTION → GPS → RESCUE ALERT.',
+    howIntegrated: 'LWIR → JETSON NANO → THERMAL ANALYSIS → RGB + THERMAL FUSION → SURVIVOR DETECTION → GPS → RESCUE ALERT.',
     keyDesignConcept: 'Sensor Honesty: Thermal imaging detects surface thermal radiation and human heat contrast; it does NOT magically "see through" solid dense rocks or feet of concrete, but detects heat plumes rising through fissures, exposed limbs, and trapped thermal pockets.',
     specifications: [
       { label: 'Thermal Resolution', value: '256 × 192 pixels (49,152 radiometric points)', highlight: true },
@@ -769,33 +732,33 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'onboard-storage',
     slug: 'onboard-storage',
-    number: 23,
+    number: 22,
     name: 'Onboard Storage',
     category: 'AI / COMPUTING',
     quantity: 1,
     role: 'Images, detections and mission data',
-    approxPrice: 'EST. ₹3,400 – ₹5,200',
-    pricePerUnitText: 'estimated industrial NVMe SSD unit',
+    approxPrice: 'EST. ₹2,400 – ₹4,200',
+    pricePerUnitText: 'estimated high-endurance storage unit',
     priceType: 'EST. PRICE',
     status: 'REPRESENTATIVE COMPONENT',
-    manufacturerTarget: '512GB M.2 2242/2280 PCIe Gen4 NVMe Industrial SSD (Shock & Vibration Rated)',
+    manufacturerTarget: 'High-Endurance 256GB MicroSDXC / USB 3.0 Solid State Drive (V30 / A2 Rated)',
     aircraftLocation: 'Avionics Bay',
-    summary: 'Ultra-fast solid-state storage mounted directly to the Jetson M.2 carrier socket for lossless mission recording.',
-    whatIsIt: 'A solid-state NVMe storage drive engineered to withstand extreme aircraft g-forces, wide temperature variations, and continuous write speeds in excess of 2,000 MB/s.',
-    whyUsed: 'LoRa radio bandwidth is strictly limited to small text alerts and coordinates. High-speed onboard storage guarantees that full-resolution 4K imagery and raw thermal radiometric data are safely preserved for forensic inspection once the UAV returns.',
-    howIntegrated: 'Slotted directly into the M.2 Key-M PCIe slot on the underside of the Jetson Orin Nano carrier board; formatted with crash-resilient ext4/ZFS filesystem.',
+    summary: 'High-speed storage mounted directly to the Jetson Nano for lossless mission recording and telemetry blackbox logging.',
+    whatIsIt: 'A solid-state high-endurance storage solution engineered to withstand aircraft vibrations, wide temperature variations, and continuous write streams.',
+    whyUsed: 'LoRa radio bandwidth is strictly limited to small text alerts and coordinates. High-speed onboard storage guarantees that full-resolution optical imagery and raw thermal radiometric data are safely preserved for forensic inspection once the UAV returns.',
+    howIntegrated: 'Slotted directly into the high-speed storage interface on the Jetson Nano carrier board; formatted with crash-resilient ext4 filesystem.',
     keyDesignConcept: 'Mission Evidence Vault: Even if wireless links are totally jammed or disconnected, all survivor detections and thermal heat maps remain permanently stored with GPS timestamps.',
     specifications: [
-      { label: 'Drive Form Factor', value: 'M.2 PCIe Gen4 NVMe Industrial SSD', highlight: true },
+      { label: 'Drive Form Factor', value: 'High-Endurance MicroSDXC / USB 3.0 SSD', highlight: true },
       { label: 'Quantity', value: '1 unit (plus FC MicroSD blackbox)' },
-      { label: 'Storage Capacity', value: '512 GB (Holds ~18 hours of dual streams)', highlight: true },
-      { label: 'Sequential Write Speed', value: '> 2,200 MB/s sustained' },
+      { label: 'Storage Capacity', value: '256 GB (Holds ~14 hours of dual streams)', highlight: true },
+      { label: 'Sequential Write Speed', value: '> 90 MB/s sustained high-bitrate write' },
       { label: 'Shock & Vibration Rating', value: '1500G / 0.5ms shock tolerance' },
       { label: 'Status', value: 'Representative Hardware Specification' }
     ],
     integrationFlow: {
-      nodes: ['RAW RGB FRAMES', 'RADIOMETRIC MATRICES', 'DETECTION JSON LOGS', 'PCIE GEN4 DATA BUS', '512GB NVMe SSD', 'POST-MISSION EXTRACTION'],
-      description: 'Saves asynchronous video ring buffers, allowing search personnel to pull high-res evidence clips via USB-C or Wi-Fi upon landing.',
+      nodes: ['RAW RGB FRAMES', 'RADIOMETRIC MATRICES', 'DETECTION JSON LOGS', 'HIGH-SPEED BUS', 'SOLID STATE STORAGE', 'POST-MISSION EXTRACTION'],
+      description: 'Saves asynchronous video ring buffers, allowing search personnel to pull high-res evidence clips via USB or Wi-Fi upon landing.',
       flowType: 'ai_sensing'
     },
     sihApproachReference: 'SIH Technical Approach: High-capacity onboard mission logging preserving multi-spectral forensic records.'
@@ -803,7 +766,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'lora-module',
     slug: 'lora-module',
-    number: 24,
+    number: 23,
     name: 'LoRa Module',
     category: 'COMMUNICATION',
     quantity: 1,
@@ -838,7 +801,7 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
   {
     id: 'ground-lora-gateway',
     slug: 'ground-lora-gateway',
-    number: 25,
+    number: 24,
     name: 'Ground LoRa Receiver / Gateway',
     category: 'COMMUNICATION',
     quantity: 1,
@@ -874,7 +837,6 @@ export const HARDWARE_COMPONENTS: HardwareComponent[] = [
 
 export const HARDWARE_CATEGORIES: { id: HardwareCategory; label: string; count?: number }[] = [
   { id: 'ALL', label: 'ALL' },
-  { id: 'AIRFRAME', label: 'AIRFRAME' },
   { id: 'PROPULSION', label: 'PROPULSION' },
   { id: 'FLIGHT CONTROL', label: 'FLIGHT CONTROL' },
   { id: 'NAVIGATION', label: 'NAVIGATION' },
@@ -899,6 +861,6 @@ export const SYSTEM_INTEGRATION_FLOWS = [
   {
     title: 'Survivor Detection & Alert Chain',
     color: '#FF5A36',
-    nodes: ['RGB Camera + 256×192 LWIR Thermal Camera', 'NVIDIA Jetson Orin Nano Super 8GB', 'TensorRT AI Multi-Spectral Fusion', 'GPS Geo-Referencing', 'LoRa Module (Airborne)', 'Ground LoRa Receiver / Gateway']
+    nodes: ['RGB Camera + 256×192 LWIR Thermal Camera', 'NVIDIA Jetson Nano 4GB', 'TensorRT AI Multi-Spectral Fusion', 'GPS Geo-Referencing', 'LoRa Module (Airborne)', 'Ground LoRa Receiver / Gateway']
   }
 ];

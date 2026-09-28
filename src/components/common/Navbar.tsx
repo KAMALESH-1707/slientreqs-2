@@ -46,13 +46,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FF5A36] text-white text-xs font-mono font-bold hover:bg-[#E04826] transition-colors cursor-pointer shadow-md"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
-              <span>ALL 25 COMPONENTS</span>
+              <span>ALL 24 COMPONENTS</span>
             </button>
           ) : (
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#141622] border border-[#232738] text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
               <span className="text-[#8E95A5] hidden sm:inline">SYSTEM STATUS:</span>
-              <span className="text-white font-bold">25 MODULES INTEGRATED</span>
+              <span className="text-white font-bold">24 MODULES INTEGRATED</span>
             </div>
           )}
         </div>

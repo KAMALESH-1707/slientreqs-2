@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onGoToOverview }) => {
               </div>
               <div className="flex justify-between border-b border-[#1A1D27] pb-1">
                 <span>AI COMPUTER:</span>
-                <span className="text-white">Jetson Orin Nano (40 TOPS)</span>
+                <span className="text-white">Jetson Nano (128 CUDA Cores, 472 GFLOPS)</span>
               </div>
               <div className="flex justify-between">
                 <span>RESCUE LINK:</span>
@@ -85,7 +85,7 @@ export const Footer: React.FC<FooterProps> = ({ onGoToOverview }) => {
           </div>
           <div className="flex items-center gap-4">
             <span className="text-[#10B981]">● SYSTEM READY</span>
-            <span>25 HARDWARE MODULES INTEGRATED</span>
+            <span>24 HARDWARE MODULES INTEGRATED</span>
           </div>
         </div>
       </div>

@@ -35,14 +35,14 @@ export const HardwareOverview: React.FC<HardwareOverviewProps> = ({
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
               <span className="text-[11px] font-mono tracking-widest text-[#FF5A36] uppercase font-bold">
-                SILENTRESQ AIRCRAFT SYSTEM · 25 HARDWARE MODULES
+                SILENTRESQ AIRCRAFT SYSTEM · 24 HARDWARE MODULES
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight uppercase">
               Autonomous Search & Rescue Hardware
             </h1>
             <p className="text-xs sm:text-sm text-[#9DA4B4] max-w-2xl">
-              All 25 mission-critical components in one page. Click <span className="text-[#FF5A36] font-bold font-mono">INFO</span> on any component to inspect its realistic 3D CAD model and read the technical engineering rationale.
+              All 24 mission-critical components in one page. Click <span className="text-[#FF5A36] font-bold font-mono">INFO</span> on any component to inspect its realistic 3D CAD model and read the technical engineering rationale.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export const HardwareOverview: React.FC<HardwareOverviewProps> = ({
             <Box className="w-4 h-4 text-[#FF5A36]" />
             <div className="text-right font-mono">
               <span className="text-[10px] text-[#8E95A5] block uppercase font-semibold">LOADED MODULES</span>
-              <span className="text-sm font-bold text-white">25 / 25 READY</span>
+              <span className="text-sm font-bold text-white">24 / 24 READY</span>
             </div>
           </div>
         </div>
@@ -90,13 +90,13 @@ export const HardwareOverview: React.FC<HardwareOverviewProps> = ({
               type="text"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Filter 25 components..."
+              placeholder="Filter 24 components..."
               className="w-full pl-9 pr-3 py-1.5 rounded-lg bg-[#141622] border border-[#222738] focus:border-[#FF5A36] focus:outline-none text-xs font-mono text-white placeholder-[#687082] transition-colors"
             />
           </div>
         </div>
 
-        {/* 25 Components Grid (Responsive 5-Column Grid) */}
+        {/* 24 Components Grid (Responsive 5-Column Grid) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {filteredComponents.map(component => (
             <HardwareCard

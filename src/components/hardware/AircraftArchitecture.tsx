@@ -42,7 +42,7 @@ export const AircraftArchitecture: React.FC<AircraftArchitectureProps> = ({
             SilentResQ Hybrid VTOL / Quadplane Architecture
           </h3>
           <p className="text-sm text-[#8E95A5] mt-1 max-w-2xl">
-            Inspect the physical placement and structural partitioning of all 25 avionics, sensing, propulsion, and AI components across the 2.1m composite airframe.
+            Inspect the physical placement and structural partitioning of all 24 avionics, sensing, propulsion, and AI components across the 2.1m composite airframe.
           </p>
         </div>
 
